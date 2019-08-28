@@ -163,14 +163,13 @@ if __name__=='__main__':
         args.train_data_file = '../data/fewrel_ori/fewrel80_train.json'
         args.val_data_file =  '../data/fewrel_ori/fewrel80_test_train.json'
         args.test_data_file = '../data/fewrel_ori/fewrel80_test_test.json'
-    elif args.dataset =='distant':
-        args.train_data_file = '../data/fewrel_distant/fewrel80_distant_train.json'
-        args.val_data_file = '../data/fewrel_distant/fewrel80_distant_test_omit.json'
-        args.test_data_file = '../data/fewrel_distant/fewrel80_test_test.json'
-    elif args.dataset =='nyt':
-        args.train_data_file = '../data/nyt10/nyt10_train.json'
-        args.val_data_file = '../data/nyt10/nyt10_test_train.json'
-        args.test_data_file = '../data/nyt10/nyt10_test_test.json'
+    # elif args.dataset =='distant':
+    #     args.train_data_file = '../data/fewrel_distant/fewrel80_distant_train.json'
+    #     args.val_data_file = '../data/fewrel_distant/fewrel80_distant_test_omit.json'
+    #     args.test_data_file = '../data/fewrel_distant/fewrel80_test_test.json'
+    else:
+        raise Exception('currently only fewrel80 is available')
+
 
     train_SN(
         train_data_file = args.train_data_file,
