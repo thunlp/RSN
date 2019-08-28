@@ -1,5 +1,5 @@
 # OpenRE
-The source code of Relational Siamese Network (EMNLP2019)
+The source code of OpenRE: Relational Siamese Network (EMNLP2019)
 
 # Environment
 You only need TensorFlow(>=1.12.0) to run this code.<br>
