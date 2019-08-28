@@ -74,7 +74,7 @@ def visualize_CNN(test_data_file,wordvec_file,model_file,save_figure_name,
 if __name__=='__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--gpu",type=str,default='0')
-    parser.add_argument("--test_data_file",type=str,default='../data/fewrel_ori/fewrel80_visual68697071.json')
+    parser.add_argument("--test_data_file",type=str,default='../data-bin/fewrel_ori/fewrel80_visual68697071.json')
     parser.add_argument("--wordvec_file",type=str,default='../data/wordvec/word_vec.json')
     parser.add_argument("--model_file",type=str,default='model_file/CNN_ori')
     parser.add_argument("--save_figure_name",type=str,default='CNN_4cluster')
