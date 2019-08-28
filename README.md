@@ -2,32 +2,23 @@
 The source code of Relational Siamese Network
 
 # Preparation
-You need TensorFlow(>=1.12.0) to run this code.
+You only need TensorFlow(>=1.12.0) to run this code.
 `pip install tensorflow-gpu==1.12`<br>
-Then you need to download the public FewRel dataset from www.zhuhao.me/fewrel.
-`cd data-bin`<br>
-`wget https://thunlp.oss-cn-qingdao.aliyuncs.com/fewrel/fewrel_train.json`<br>
-`wget https://thunlp.oss-cn-qingdao.aliyuncs.com/fewrel/fewrel_val.json`<br>
-Then you can preprocess them to get split data.
-`python data_split.py`<br>
+Then you need to download data from
+https://drive.google.com/file/d/10Q7M209DVO5zWUEZ1Ir1pbCNZq3ZxZzg/view?usp=sharing
+The data is already preprocessed from the original FewRel and Glove data. Unzip it and get your very easy start.
 
-# environment
-`export PATH=/usr/local/cuda10.1/bin:$PATH`<br>
-`export PYTHONPATH=your path/ecloud:$PYTHONPATH`
+# Running CNN
+A standard CNN for supervised RE can be trained by
+`cd CNN`<br>
+`python train_CNN.py`<br>
 
+# Running RSN
+The Relational Siamese Network for OpenRE can be trained by
+`cd RSN`<br>
+`python train_RSN.py`<br>
+By default it will be trained as a semi-supervised RSN. A supervised RSN without utilizing unlabeled data can be trained by
+`python train_RSN.py --trainset_loss_type cross --testset_loss_type none`<br>
 
-# dataset download and preprocess
-Only implement QM8, QM9 and Alchemy auto-process yet.
-`cd preprocess`<br>
-`python build.py`<br>
-`cd ..`
-
-# install pyGPGO (optional for optim_train.py)
-`pip install pyGPGO`
-
-# install apex (optional for train -apex 1)
-`git clone https://github.com/NVIDIA/apex`<br>
-`cd apex`<br>
-`pip install -v --no-cache-dir --global-option="--cpp_ext" --global-option="--cuda_ext" ./`<br>
-or<br>
-`pip install -v --no-cache-dir ./`
+# Future Work
+The FewRel-distant will be released in the future. I'll add models and data when they are available.
