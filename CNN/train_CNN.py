@@ -102,9 +102,9 @@ def train_CNN(train_data_file,test_data_file,wordvec_file,load_model_name,save_m
 if __name__=='__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--gpu",type=str,default='0')
-    parser.add_argument("--train_data_file",type=str,default='../data/fewrel_ori/fewrel80_test_train.json')
-    parser.add_argument("--test_data_file",type=str,default='../data/fewrel_ori/fewrel80_test_test.json')
-    parser.add_argument("--wordvec_file",type=str,default='../data/wordvec/word_vec.json')
+    parser.add_argument("--train_data_file",type=str,default='../data-bin/fewrel_ori/fewrel80_test_train.json')
+    parser.add_argument("--test_data_file",type=str,default='../data-bin/fewrel_ori/fewrel80_test_test.json')
+    parser.add_argument("--wordvec_file",type=str,default='../data-bin/wordvec/word_vec.json')
     parser.add_argument("--load_model_name",type=str,default=None)
     parser.add_argument("--save_model_name",type=str,default="CNN")
     parser.add_argument("--loss_type",type=str,default='none')
