@@ -133,10 +133,10 @@ if __name__=='__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--gpu",type=str,default='0')
     parser.add_argument("--dataset",type=str,default='ori')
-    parser.add_argument("--train_data_file",type=str,default='../data/fewrel_ori/fewrel80_train.json')
-    parser.add_argument("--val_data_file",type=str,default='../data/fewrel_ori/fewrel80_test_train.json')
-    parser.add_argument("--test_data_file",type=str,default='../data/fewrel_ori/fewrel80_test_test.json')
-    parser.add_argument("--wordvec_file",type=str,default='../data/wordvec/word_vec.json')
+    parser.add_argument("--train_data_file",type=str,default='../data-bin/fewrel_ori/fewrel80_train.json')
+    parser.add_argument("--val_data_file",type=str,default='../data-bin/fewrel_ori/fewrel80_test_train.json')
+    parser.add_argument("--test_data_file",type=str,default='../data-bin/fewrel_ori/fewrel80_test_test.json')
+    parser.add_argument("--wordvec_file",type=str,default='../data-bin/wordvec/word_vec.json')
     parser.add_argument("--load_model_name",type=str,default=None)
     parser.add_argument("--save_model_name",type=str,default='ori/')
     parser.add_argument("--select_cluster",type=int,default=1)
@@ -160,13 +160,13 @@ if __name__=='__main__':
     os.environ["CUDA_VISIBLE_DEVICES"]=args.gpu
 
     if args.dataset == 'ori':
-        args.train_data_file = '../data/fewrel_ori/fewrel80_train.json'
-        args.val_data_file =  '../data/fewrel_ori/fewrel80_test_train.json'
-        args.test_data_file = '../data/fewrel_ori/fewrel80_test_test.json'
+        args.train_data_file = '../data-bin/fewrel_ori/fewrel80_train.json'
+        args.val_data_file =  '../data-bin/fewrel_ori/fewrel80_test_train.json'
+        args.test_data_file = '../data-bin/fewrel_ori/fewrel80_test_test.json'
     # elif args.dataset =='distant':
-    #     args.train_data_file = '../data/fewrel_distant/fewrel80_distant_train.json'
-    #     args.val_data_file = '../data/fewrel_distant/fewrel80_distant_test_omit.json'
-    #     args.test_data_file = '../data/fewrel_distant/fewrel80_test_test.json'
+    #     args.train_data_file = '../data-bin/fewrel_distant/fewrel80_distant_train.json'
+    #     args.val_data_file = '../data-bin/fewrel_distant/fewrel80_distant_test_omit.json'
+    #     args.test_data_file = '../data-bin/fewrel_distant/fewrel80_test_test.json'
     else:
         raise Exception('currently only fewrel80 is available')
 
