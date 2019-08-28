@@ -1,6 +1,7 @@
 BERT+HAC
 HAC
 data
+data-bin
 stanfordcorenlp3_9_2
 VAE
 data-bin.zip
