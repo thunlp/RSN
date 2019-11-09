@@ -8,7 +8,7 @@ import argparse
 
 sys.path.append(os.path.abspath('../lib/'))
 from dataloader.dataloader import dataloader
-from model.siamodel import VASN
+from model.siamodel import RSN
 from module.clusters import *
 from evaluation.evaluation import ClusterEvaluation
 from kit.messager import messager
@@ -51,7 +51,7 @@ def train_SN(train_data_file,val_data_file,test_data_file,wordvec_file,load_mode
     config = tf.ConfigProto()
     config.gpu_options.allow_growth = True
     sess = tf.Session(config = config)
-    SN = VASN(session=sess,word_vec_mat=word_vec_mat,max_len=max_len, pos_emb_dim=pos_emb_dim,dropout=0.2)
+    SN = RSN(session=sess,word_vec_mat=word_vec_mat,max_len=max_len, pos_emb_dim=pos_emb_dim,dropout=0.2)
     SN.set_ph(batch_size=batch_size)
     SN.set_train_op(trainset_loss_type=trainset_loss_type,testset_loss_type=testset_loss_type,p_cond=p_cond,p_denoise=p_denoise,p_mult=0.02)
     SN.init_model(load_path)
