@@ -11,7 +11,6 @@ You only need TensorFlow(>=1.12.0) to run this code.<br>
 # Data
 You can download data by:<br>
 `bash download.sh`<br>
-`unzip data-bin.zip`<br>
 The data is already preprocessed from the original FewRel and Glove data.
 
 # Running CNN
